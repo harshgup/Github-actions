@@ -17,7 +17,7 @@ jobs:
     - name: Set image tag
       id: set-tag
       run: echo "IMAGE_TAG=hg8109/test:$(date +%s)" >> $GITHUB_ENV
-      run: echo $GITHUB_ENV
+    - run: echo $GITHUB_ENV
 
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag ${{ env.IMAGE_TAG }}
